@@ -29,8 +29,8 @@ You will be graded on the level of detail in each ticket, the clarity of the exe
 
 ### Implementation Details:
 
-- Add a new Table custom_agent_ids (agent_id (PK, FK to agent table), custom_id, facility_id). // custom_id+facility_id is unique and we should add a constraint for the same on db level. Table will have createdAt, updatedAt, isDeleted columsn too
-- When an Agent is added to a Facility, create a new row in 'facility_agent_ids' with the custom id provided by the Facility 
+- Add a new Table custom_agent_ids (agent_id (PK, FK to agent table), custom_id, facility_id). // custom_id+facility_id is unique and we should add a constraint for the same on db level. Table will have createdAt, updatedAt, isDeleted columns too
+- When an Agent is added to a Facility, create a new row in 'custom_agent_ids' with the custom id provided by the Facility 
 - When generating a report for a Facility, use the custom id from 'facility_agent_ids' instead of the internal database id
 - If the facility has not provided the custom_id, we should not create a row and rely on database provided agent_id 
 
